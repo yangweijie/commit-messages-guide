@@ -1,44 +1,46 @@
-# Commit messages guide
+# 提交消息指南
 
-[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/RomuloOliveira)
+[![感谢!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/RomuloOliveira)
 
-A guide to understanding the importance of commit messages and how to write them well.
+理解提交消息的重要性以及如何写好它们的指南。
 
-It may help you to learn what a commit is, why it is important to write good messages, best practices and some tips to plan and (re)write a good commit history.
+这可能有助于你了解什么是提交，为什么写好提交消息是很重要的、最佳实践和一些建议来计划和 (重新) 写一篇好的提交历史。
 
-## Available languages
+## 可用语言
 
-- [English](README.md)
-- [Português](README_pt-BR.md)
-- [Deutsch](README_de-DE.md)
-- [Español](README_es-AR.md)
-- [Italiano](README_it-IT.md)
+- [英语](README.md)
+- [葡萄牙语](README_pt-BR.md)
+- [德语](README_de-DE.md)
+- [西班牙语](README_es-AR.md)
+- [意大利语](README_it-IT.md)
 - [汉语](README_zh-CN.md)
 
-## What is a "commit"?
+## 什么是 "commit" ?
 
-In simple terms, a commit is a _snapshot_ of your local files, written in your local repository.
-Contrary to what some people think, [git doesn't store only the difference between the files, it stores a full version of all files](https://git-scm.com/book/eo/v1/Ekkomenci-Git-Basics#Snapshots,-Not-Differences).
-For files that didn't change from one commit to another, git stores just a link to the previous identical file that is already stored.
+简而言之，提交是本地文件的_快照_，写在本地存储库中。
 
-The image below shows how git stores data over time, in which each "Version" is a commit:
+与一些人的想法相反， [git 不存储文件间的差异而是全版本](https://git-scm.com/book/eo/v1/Ekkomenci-Git-Basics#Snapshots,-Not-Differences)。
+
+对于没有从一个提交更改为另一个提交的文件，git 只存储到之前已经存储的相同文件的链接。
+
+下图显示了 git 如何随着时间的推移存储数据，其中每个 “版本” 都是提交：
 
 ![](https://i.stack.imgur.com/AQ5TG.png)
 
-## Why are commit messages important?
+## 为什么提交信息很重要？
 
-- To speed up and streamline code reviews
-- To help in the understanding of a change
-- To explain "the whys" that cannot be described only with code
-- To help future maintainers figure out why and how changes were made, making troubleshooting and debugging easier
+- 加快和简化代码审查
+- 助理解一个变更
+- 解释只能用代码描述的 “为什么”
+- 帮助未来的维护人员了解更改的原因和方式，使故障排除和调试变得更容易
 
-To maximize those outcomes, we can use some good practices and standards described in the next section.
+为了最大限度地发挥这些成果，我们可以使用下一节中描述的一些好的做法和标准。
 
-## Good practices
+## 好的实践
 
-These are some practices collected from my experiences, internet articles, and other guides. If you have others (or disagree with some) feel free to open a Pull Request and contribute.
+这里有从我的经验、互联网文章和其他指南中收集的一些实践。如果你有其他 (或者不同意部分内容)，请随时提出请求并做出贡献。
 
-### Use imperative form
+### 使用命令式的形式
 
 ```
 # Good
@@ -50,11 +52,11 @@ Use InventoryBackendPool to retrieve inventory backend
 Used InventoryBackendPool to retrieve inventory backend
 ```
 
-_But why use the imperative form?_
+但是为什么要使用命令式形式呢？
 
-A commit message describes what the referenced change actually **does**, its effects, not what was done.
+提交消息描述了引用的更改实际上**做**了什么，它的效果，而不是做过什么。
 
-[This excellent article from Chris Beams](https://chris.beams.io/posts/git-commit/) gives us a simple sentence that can be used to help us write better commit messages in imperative form:
+[Chris Beams的这篇优秀的文章](https://chris.beams.io/posts/git-commit/)  给我们一个简单的句子，可以帮助我们用命令式的形式写出更好的提交消息:
 
 ```
 If applied, this commit will <commit message>
@@ -72,7 +74,7 @@ If applied, this commit will use InventoryBackendPool to retrieve inventory back
 If applied, this commit will used InventoryBackendPool to retrieve inventory backend
 ```
 
-### Capitalize the first letter
+### 大写首字母
 
 ```
 # Good
@@ -84,12 +86,11 @@ Add `use` method to Credit model
 add `use` method to Credit model
 ```
 
-The reason that the first letter should be capitalized is to follow the grammar rule of using capital letters at the beginning of sentences.
+首字母大写的原因是遵循句子开头使用大写字母的语法规则。这种做法的使用可能因人而异，因团队而异，甚至因语言而异。
 
-The use of this practice may vary from person to person, team to team, or even from language to language.
-Capitalized or not, an important point is to stick to a single standard and follow it.
+不管是否大写，重要的一点是坚持一个标准并遵循它。
 
-### Try to communicate what the change does without having to look at the source code
+### 尝试交流更改所做的事情，而不必查看源代码
 
 ```
 # Good
@@ -112,10 +113,9 @@ Increase left padding between textbox and layout frame
 Adjust css
 ```
 
-It is useful in many scenarios (e.g. multiple commits, several changes and refactors) to help reviewers understand what the committer was thinking.
+在许多情况下 (例如多次提交、多次更改和重构)，帮助审阅者理解提交者的想法是有用的。
 
-### Use the message body to explain "why", "for what", "how" and additional details
-
+### 使用消息正文解释 “为什么” 、 “如何” 和其他细节
 ```
 # Good
 Fix method name of InventoryBackend child classes
@@ -146,12 +146,12 @@ Change from namedtuple to class because we need to
 setup a new attribute (in_use_amount) with a new value
 ```
 
-The subject and the body of the messages are separated by a blank line.
-Additional blank lines are considered as a part of the message body.
+消息的主题和正文用空行分隔。
+额外的空行被认为是消息正文的一部分。
 
-Characters like `-`, `*` and \` are elements that improve readability.
+像 `-`, `*` and \` 这样的字符是提高可读性的元素。
 
-### Avoid generic messages or messages without any context
+### 避免没有任何上下文的通用消息或消息
 
 ```
 # Bad
@@ -166,15 +166,15 @@ Change stuff
 Adjust css
 ```
 
-### Limit the number of columns
+### 限制列的数量
 
-[It's recommended](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#_commit_guidelines) to use a maximum of 50 characters for the subject and 72 for the body.
+[推荐](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#_commit_guidelines) 为主题使用最多 50 个字符，为正文使用 72 个字符。
 
-### Keep language consistency
+### 保持语言的一致性
 
-For project owners: Choose a language and write all commit messages using that language. Ideally, it should match the code comments, default translation locale (for localized projects), etc.
+对于项目所有者: 选择一种语言，并使用该语言编写所有提交消息。理想情况下，它应该与代码注释、默认翻译区域设置 (对于本地化项目) 等相匹配。
 
-For contributors: Write your commit messages using the same language as the existing commit history.
+对于贡献者: 使用与现有提交历史相同的语言编写提交消息。
 
 ```
 # Good
@@ -197,9 +197,9 @@ efefef Add `use` method to Credit model
 cdcdcd Agora vai
 ```
 
-### Template
+### 模板
 
-This is a template, [written originally by Tim Pope](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html), which appears in the [_Pro Git Book_](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project).
+这有一个模板，[Tim Pope的出稿](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html), 出现在 [_Pro Git Book_](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project).
 
 ```
 Summarize changes in around 50 characters or less
@@ -233,51 +233,50 @@ See also: #456, #789
 
 ## Rebase vs. Merge
 
-This section is a **TL;DR** of Atlassian's excellent tutorial, ["Merging vs. Rebasing"](https://www.atlassian.com/git/tutorials/merging-vs-rebasing).
+本章节是  Atlassian's 精品教程 ["Merging vs. Rebasing"](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)的**精华**。
 
 ![](https://wac-cdn.atlassian.com/dam/jcr:01b0b04e-64f3-4659-af21-c4d86bc7cb0b/01.svg?cdnVersion=hq)
 
 ### Rebase
 
-**TL;DR:** Applies your branch commits, one by one, upon the base branch, generating a new tree.
+**TL;DR:** 在基分支上逐个应用分支提交，生成新树。
 
 ![](https://wac-cdn.atlassian.com/dam/jcr:5b153a22-38be-40d0-aec8-5f2fffc771e5/03.svg?cdnVersion=hq)
 
 ### Merge
 
-**TL;DR:** Creates a new commit, called (appropriately) a _merge commit_, with the differences between the two branches.
+**TL;DR:** 使用两个分支之间的差异创建一个新的提交，称为 (适当地) 合并提交。
 
 ![](https://wac-cdn.atlassian.com/dam/jcr:e229fef6-2c2f-4a4f-b270-e1e1baa94055/02.svg?cdnVersion=hq)
 
-### Why do some people prefer to rebase over merge?
+### 为什么有些人相对于合并更喜欢变基？
 
-I particularly prefer to rebase over merge. The reasons include:
+比起合并，我更喜欢变基。原因包括:
 
-* It generates a "clean" history, without unnecessary merge commits
-* _What you see is what you get_, i.e., in a code review all changes come from a specific and entitled commit, avoiding changes hidden in merge commits
-* More merges are resolved by the committer, and every merge change is in a commit with a proper message
-    * It's unusual to dig in and review merge commits, so avoiding them ensures all changes have a commit where they belong
+* 它生成 “干净” 的历史记录，没有不必要的合并提交
+* _你所看到的是你所得到的，也就是说，在代码审查中，所有的更改都来自一个特定的、有标题的提交，避免了隐藏在合并提交中的更改
+* 提交者解决了更多的合并，每个合并更改都包含在带有适当消息的提交中
+    * 挖掘和审查合并提交并不寻常的，所以避免它们可以确保所有的更改都有属于它们的提交
 
-### When to squash
+### 什么时候压缩
 
-"Squashing" is the process of taking a series of commits and condensing them into a single commit.
+"Squashing" 是将一系列提交合并为单个提交的过程。
 
-It's useful in several situations, e.g.:
+它在几种情况下都很有用，例如:
+- 减少很少或没有上下文的提交 (拼写错误更正、格式、忘记的东西)
+- 将单独的更改连接在一起使用时更有意义
+- 正在重写正在进行的提交
 
-- Reducing commits with little or no context (typo corrections, formatting, forgotten stuff)
-- Joining separate changes that make more sense when applied together
-- Rewriting _work in progress_ commits
+### 什么时候避免变基或压缩？
 
-### When to avoid rebase or squash?
+避免在公共提交或多人工作的共享分支中进行变基和压缩。
+Rebase 和 squash 重写历史记录并覆盖现有提交，在共享分支上的提交上执行 (即推送到远程存储库或来自其他分支的提交) 可能会造成混乱，人们可能会因为不同的树和冲突而失去他们的变化 (无论是在本地还是远程)。
 
-Avoid rebase and squash in public commits or in shared branches where multiple people work on.
-Rebase and squash rewrite history and overwrite existing commits, doing it on commits that are on shared branches (i.e., commits pushed to a remote repository or that comes from others branches) can cause confusion and people may lose their changes (both locally and remotely) because of divergent trees and conflicts.
-
-## Useful git commands
+## 有用的 git 命令
 
 ### rebase -i
 
-Use it to squash commits, edit messages, rewrite/delete/reorder commits, etc.
+它可以压缩提交、编辑消息、重写/删除/重新排序提交等。
 
 ```
 pick 002a7cc Improve description and update document title
@@ -318,14 +317,14 @@ pick 9b81c72 Add "Rebase vs Merge" section
 
 #### fixup
 
-Use it to clean up commits easily and without needing a more complex rebase.
-[This article](http://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html) has very good examples of how and when to do it.
+使用它可以轻松清理提交，而不需要更复杂的 rebase。
+[这篇文章](http://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html)有非常好的例子来说明如何以及何时去做。
 
 ### cherry-pick
 
-It is very useful to apply that commit you made on the wrong branch, without the need to code it again.
+应用你在错误的分支上提交的提交非常有用，而不需要再次编码。
 
-Example:
+示例:
 
 ```
 $ git cherry-pick 790ab21
@@ -336,7 +335,7 @@ $ git cherry-pick 790ab21
 
 ### add/checkout/reset [--patch | -p]
 
-Let's say we have the following diff:
+假设我们有以下差异:
 
 ```diff
 diff --git a/README.md b/README.md
@@ -365,8 +364,8 @@ index 7b45277..6b1993c 100644
 +- [A Note About Git Commit Messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
 ```
 
-We can use `git add -p` to add only the patches we want to, without the need to change the code that is already written.
-It's useful to split a big change into smaller commits or to reset/checkout specific changes.
+我们可以用 `git add -p` 只添加我们想要的补丁，而不需要更改已经编写的代码。
+将较大的更改拆分为较小的提交或重置/签出特定更改很有用。
 
 ```
 Stage this hunk [y,n,q,a,d,/,j,J,g,s,e,?]? s
@@ -416,24 +415,24 @@ Stage this hunk [y,n,q,a,d,/,K,j,J,g,e,?]?
 +- [A Note About Git Commit Messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
 ```
 
-## Other interesting stuff
+## 其他有趣的东西
 
 https://whatthecommit.com/
 
-## Like it?
+## 喜欢吗？
 
 [Say thanks!](https://saythanks.io/to/RomuloOliveira)
 
-## Contributing
+## 贡献
 
-Any kind of help would be appreciated. Example of topics that you can help me with:
+我们将感谢您的任何帮助。 可以帮助我的示列:
 
-- Grammar and spelling corrections
-- Translation to other languages
-- Improvement of source referencing
-- Incorrect or incomplete information
+- 语法和拼写更正
+- 翻译成其他语言
+- 源引用的改进
+- 信息不正确或不完整
 
-## Inspirations, sources and further reading
+## 启发、来源和进一步阅读
 
 - [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
 - [Pro Git Book - Commit guidelines](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#_commit_guidelines)
